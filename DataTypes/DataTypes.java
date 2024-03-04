@@ -21,6 +21,20 @@ public class DataTypes {
 
     System.out.println();
 
+    System.out.println("Double Values:");
+    System.out.println("Double Min: " + Double.MIN_VALUE);
+    System.out.println("Double Max: " + Double.MAX_VALUE);
+    System.out.println("Double Bytes: " + Double.BYTES);
+
+    System.out.println();
+
+    System.out.println("Long Values");
+    System.out.println("Long Min: " + Long.MIN_VALUE);
+    System.out.println("Long Max: " + Long.MAX_VALUE);
+    System.out.println("Long Bytes: " + Long.BYTES);
+
+    System.out.println();
+
     System.out.println("Character Values:");
     System.out.println("Character Min: " + Character.MIN_VALUE);
     System.out.println("Character Max: " + Character.MAX_VALUE);
