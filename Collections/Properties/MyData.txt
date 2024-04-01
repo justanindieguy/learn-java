@@ -1,0 +1,6 @@
+#Laptop
+#Mon Apr 01 09:59:09 CST 2024
+Name=Coke
+Type=Drink
+Brand=Coca-Cola
+Quantity=1lt.
