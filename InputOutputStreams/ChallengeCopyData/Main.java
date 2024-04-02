@@ -6,38 +6,28 @@ import java.io.IOException;
 
 public class Main {
   public static void main(String[] args) {
-    String fileContent = readFileContent("Source.txt");
-    System.out.println(fileContent);
-    writeFile(fileContent.toLowerCase(), "Copy.txt");
+    copyFileContents("Source.txt", "Copy.txt");
   }
 
-  private static String readFileContent(String path) {
+  private static void copyFileContents(String sourcePath, String fileName) {
     try {
-      FileReader fr = new FileReader(path);
+      FileReader fr = new FileReader(sourcePath);
+      FileWriter fw = new FileWriter(fileName);
 
-      int x;
-      StringBuilder sb = new StringBuilder();
-      while ((x = fr.read()) != -1) {
-        sb.append((char) x);
+      int currentByte;
+      while ((currentByte = fr.read()) != -1) {
+        // If currentCharacter is upperCase letter
+        if (currentByte >= 65 && currentByte <= 120) {
+          fw.write(currentByte + 32);
+        } else {
+          fw.write(currentByte);
+        }
       }
 
       fr.close();
-      return sb.toString();
+      fw.close();
     } catch (FileNotFoundException e) {
       System.out.println(e);
-      return "";
-    } catch (IOException e) {
-      System.out.println(e);
-      return "";
-    }
-  }
-
-  private static void writeFile(String content, String fileName) {
-    try {
-      FileWriter fw = new FileWriter(fileName);
-      fw.write(content);
-      System.out.println(fileName + " created successfully!");
-      fw.close();
     } catch (IOException e) {
       System.out.println(e);
     }
