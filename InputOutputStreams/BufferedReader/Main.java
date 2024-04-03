@@ -7,7 +7,7 @@ public class Main {
   public static void main(String[] args) {
     try {
       FileReader fr = new FileReader("Test.txt");
-      BufferedReader br = new BufferedReader(fr);
+      BufferedReader br = new BufferedReader(fr); // BufferedReader supports mark
 
       System.out.print((char) br.read());
       System.out.print((char) br.read());
